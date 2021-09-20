@@ -26,6 +26,7 @@ pipeline {
                         script {
                             println("abcdefg");
                             println(yo);
+                            yo.pop();
 
                             sh """
                                 python pro1.py
@@ -47,6 +48,7 @@ pipeline {
                             sh """
                                 python pro2.py
                             """
+                            println(yo);
                         }
                     }
                 }
