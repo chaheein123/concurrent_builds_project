@@ -5,7 +5,10 @@ pipeline {
 
         stage("Variables declar") {
             steps {
-                yo = ["pro1.py", "pro2.py", "pro3.py"]
+                script {
+                    yo = ["pro1.py", "pro2.py", "pro3.py"]
+                }
+                
             }
             
         }
