@@ -18,24 +18,28 @@ pipeline {
         stage("Parallel stage") {
 
             parallel {
-                stage("step 1") {
-                    agent {
-                        label "my-slave1"
-                    }
-                    steps {
-                        script {
-                            println("abcdefg");
-                            println(yo);
-                            yo.pop();
-
-                            sh """
-                                python pro1.py
-                            """
-
+                while (yo.size() > 0) {
+                    stage("step 1") {
+                        agent {
+                            label "my-slave1"
                         }
-                        
+                        steps {
+                            script {
+                                println("abcdefg");
+                                println(yo);
+                                yo.pop();
+
+                                sh """
+                                    python pro1.py
+                                """
+
+                            }
+                            
+                        }
                     }
+
                 }
+                
 
                 stage("step 2") {
                     agent {
