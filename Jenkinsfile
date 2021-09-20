@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage("Parallel stage") {
 
-            myglobal = ["pro1.py", "pro2.py", "pro3.py"];
+            //myglobal = ["pro1.py", "pro2.py", "pro3.py"];
 
             parallel {
                 stage("step 1") {
