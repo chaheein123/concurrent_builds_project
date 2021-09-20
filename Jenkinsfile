@@ -1,18 +1,15 @@
 pipeline {
     agent none
 
-    parameters {
-        choice(choices: ['pro1.py', 'pro2.py','pro3.py'], name: 'QUEUE_SECOND')
-
-    }
-
     stages {
-        stage("Parallel stage") {
 
-            //myglobal = ["pro1.py", "pro2.py", "pro3.py"];
-            steps {
-                yoyoyo = ['pro1.py', 'pro2.py','pro3.py']
-            }
+        stage("Variables declar") {
+            yo = ["pro1.py", "pro2.py", "pro3.py"]
+        }
+
+
+
+        stage("Parallel stage") {
 
             parallel {
                 stage("step 1") {
@@ -22,7 +19,7 @@ pipeline {
                     steps {
                         script {
                             println("abcdefg");
-                            println(yoyoyo);
+                            println(yo);
 
                             sh """
                                 python pro1.py
