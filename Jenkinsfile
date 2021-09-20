@@ -10,7 +10,9 @@ pipeline {
         stage("Parallel stage") {
 
             //myglobal = ["pro1.py", "pro2.py", "pro3.py"];
-
+            steps {
+                yoyoyo = ['pro1.py', 'pro2.py','pro3.py']
+            }
 
             parallel {
                 stage("step 1") {
@@ -20,7 +22,7 @@ pipeline {
                     steps {
                         script {
                             println("abcdefg");
-                            println(QUEUE_SECOND);
+                            println(yoyoyo);
 
                             sh """
                                 python pro1.py
