@@ -4,7 +4,10 @@ pipeline {
     stages {
 
         stage("Variables declar") {
-            yo = ["pro1.py", "pro2.py", "pro3.py"]
+            steps {
+                yo = ["pro1.py", "pro2.py", "pro3.py"]
+            }
+            
         }
 
 
