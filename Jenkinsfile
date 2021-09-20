@@ -4,15 +4,23 @@ pipeline {
     stages {
         stage("Parallel stage") {
 
+            myglobal = ["pro1.py", "pro2.py", "pro3.py"];
+
             parallel {
                 stage("step 1") {
                     agent {
                         label "my-slave1"
                     }
                     steps {
-                        sh """
-                            python pro1.py
-                        """
+                        script {
+                            println("abcdefg")
+
+                            sh """
+                                python pro1.py
+                            """
+
+                        }
+                        
                     }
                 }
 
@@ -21,9 +29,12 @@ pipeline {
                         label "agent2"
                     }
                     steps {
-                        sh """
-                            python pro2.py
-                        """
+                        script {
+                            println("zzzzzzzzz")
+                            sh """
+                                python pro2.py
+                            """
+                        }
                     }
                 }
             }
