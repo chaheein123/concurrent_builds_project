@@ -13,7 +13,8 @@ pipeline {
                     }
                     steps {
                         script {
-                            println("abcdefg")
+                            println("abcdefg");
+                            println(PYTHON_QUEUE);
 
                             sh """
                                 python pro1.py
@@ -31,6 +32,7 @@ pipeline {
                     steps {
                         script {
                             println("zzzzzzzzz")
+                            println(PYTHON_QUEUE);
                             sh """
                                 python pro2.py
                             """
